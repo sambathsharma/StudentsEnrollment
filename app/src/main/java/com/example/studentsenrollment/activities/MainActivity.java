@@ -44,7 +44,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.cv_view_enroll:
-
+                intent = new Intent(MainActivity.this, StudentsListActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.cv_logout:

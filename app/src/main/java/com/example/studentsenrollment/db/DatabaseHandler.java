@@ -2,16 +2,18 @@ package com.example.studentsenrollment.db;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
     public static final String TABLE_STUDENT_DETAILS = "studentDetailsTable";
     // Database Version
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 1;
     // Database Name
-    private static final String DATABASE_NAME = "InsuranceInspectionDB";
+    private static final String DATABASE_NAME = "EnrollmentDB";
     private static final String CREATE_TABLE_STUDENT_DETAILS = "CREATE TABLE if not exists "
             + TABLE_STUDENT_DETAILS + " ("
             + Column.ID.getmColumnName() + " TEXT PRIMARY KEY , "
@@ -55,7 +57,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                                      final String department) {
 
         SQLiteDatabase db = this.getWritableDatabase();
-        db.beginTransaction();
+//        db.beginTransaction();
 
         try {
             ContentValues values = new ContentValues();
@@ -68,11 +70,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             values.put(Column.YEAR.getmColumnName(), year);
             values.put(Column.DEPARTMENT.getmColumnName(), department);
             db.insert(TABLE_STUDENT_DETAILS, null, values);
+
+//            db.setTransactionSuccessful();
         } catch (Exception e){
             e.printStackTrace();
         } finally {
-            db.endTransaction();
+//            db.endTransaction();
+//            db.close();
         }
+    }
+
+    public Cursor getStudentDetails() {
+        String sql = "SELECT * FROM " + TABLE_STUDENT_DETAILS;
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery(sql, null);
     }
 
     public enum Column {
