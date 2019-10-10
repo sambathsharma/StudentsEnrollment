@@ -18,7 +18,7 @@ public class SplashActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences(Constants.LOGIN_PREFERENCE, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(Constants.USERNAME, "admin");
+        editor.putString(Constants.USERNAME, "ADMIN");
         editor.putString(Constants.PASSWORD, "admin@123");
         editor.apply();
 

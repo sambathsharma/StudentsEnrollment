@@ -6,7 +6,7 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="admin">Administrator</string>
-    <string name="enroll">Enroll student</string>
+    <string name="enroll">Enroll students</string>
     <string name="view_enroll">View enrolled students</string>
     <string name="logout">Logout</string>
     <string name="student_enrollment">Student Enrollment</string>
@@ -18,4 +18,5 @@
     <string name="female">Female</string>
     <string name="trans">Trans</string>
     <string name="dob">DOB</string>
+    <string name="submit">Submit</string>
 </resources>

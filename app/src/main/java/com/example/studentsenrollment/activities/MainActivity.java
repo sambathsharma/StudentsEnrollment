@@ -1,6 +1,7 @@
 package com.example.studentsenrollment.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
@@ -13,7 +14,7 @@ import com.example.studentsenrollment.utils.Constants;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    ConstraintLayout cv_enroll, cv_view_enroll, cv_logout;
+    CardView cv_enroll, cv_view_enroll, cv_logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +36,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-
+        Intent intent;
         switch (view.getId()) {
             case R.id.cv_enroll :
-
+                intent = new Intent(MainActivity.this, StudentEnrollmentActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.cv_view_enroll:
@@ -51,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 editor.putBoolean(Constants.IS_LOGGED_IN, false);
                 editor.apply();
 
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
 

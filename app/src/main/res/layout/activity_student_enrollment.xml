@@ -48,6 +48,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="15dp">
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -78,6 +82,7 @@
                 android:textColorHint="@color/colorHint"
                 android:layout_margin="10dp"
                 android:textSize="14sp"
+                android:maxLength="10"
                 android:inputType="phone"
                 android:imeOptions="actionNext"
                 android:hint="@string/mobile"/>
@@ -131,7 +136,7 @@
                     android:gravity="center"/>
 
                 <RadioButton
-                    android:id="@+id/rating_orange"
+                    android:id="@+id/radio_female"
                     android:layout_width="wrap_content"
                     android:layout_height="28dp"
                     android:text="@string/female"
@@ -139,11 +144,10 @@
                     android:textColor="@color/colorPrimary"
                     android:layout_marginRight="16dp"
                     android:enabled="true"
-                    android:gravity="center"
-                    android:tag="OrangeRadio" />
+                    android:gravity="center"/>
 
                 <RadioButton
-                    android:id="@+id/rating_yellow"
+                    android:id="@+id/radio_trans"
                     android:layout_width="wrap_content"
                     android:layout_height="28dp"
                     android:text="@string/trans"
@@ -151,8 +155,7 @@
                     android:textColor="@color/colorPrimary"
                     android:layout_marginRight="16dp"
                     android:enabled="true"
-                    android:gravity="center"
-                    android:tag="YellowRadio" />
+                    android:gravity="center"/>
 
             </RadioGroup>
 
@@ -171,7 +174,42 @@
                 android:focusable="false"
                 android:hint="@string/dob"/>
 
+            <Spinner
+                android:id="@+id/spinner_year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/et_dob"
+                app:layout_constraintStart_toStartOf="@+id/et_name"
+                app:layout_constraintEnd_toEndOf="@+id/et_name"
+                android:layout_margin="10dp"/>
+
+            <Spinner
+                android:id="@+id/spinner_department"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/spinner_year"
+                app:layout_constraintStart_toStartOf="@+id/et_name"
+                app:layout_constraintEnd_toEndOf="@+id/et_name"
+                android:layout_margin="10dp"/>
+
+            <Button
+                android:id="@+id/btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/submit"
+                android:textColor="@color/colorWhite"
+                android:background="@color/colorGreen"
+                android:textSize="14sp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinner_department"/>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
 
     </androidx.cardview.widget.CardView>
 

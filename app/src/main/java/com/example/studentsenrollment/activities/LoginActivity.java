@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             SharedPreferences sharedPreferences = getSharedPreferences(Constants.LOGIN_PREFERENCE, MODE_PRIVATE);
             if (!et_user_id.getText().toString().isEmpty()){
                 if (!et_password.getText().toString().isEmpty()){
-                    if (et_user_id.getText().toString().equals(sharedPreferences.getString(Constants.USERNAME, ""))){
+                    if (et_user_id.getText().toString().toUpperCase().contains(sharedPreferences.getString(Constants.USERNAME, ""))){
                         if (et_password.getText().toString().equals(sharedPreferences.getString(Constants.PASSWORD, ""))){
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.putBoolean(Constants.IS_LOGGED_IN, true);
