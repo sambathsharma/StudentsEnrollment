@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">StudentsEnrollment</string>
+    <string name="hello">Hello</string>
+    <string name="please_login">Please Login to start your day</string>
+    <string name="user_id">User ID</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="admin">Administrator</string>
+    <string name="enroll">Enroll student</string>
+    <string name="view_enroll">View enrolled students</string>
+    <string name="logout">Logout</string>
+    <string name="student_enrollment">Student Enrollment</string>
+    <string name="name">Name</string>
+    <string name="mobile">Mobile</string>
+    <string name="address">Address</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="trans">Trans</string>
+    <string name="dob">DOB</string>
+</resources>
